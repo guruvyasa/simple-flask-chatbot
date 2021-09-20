@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height:100vh;
+            background:#fcce54;
+            
+        }
+        form{
+            background:#eeeeee;
+            padding:1rem;
+        }
+
+        p{
+            margin:5px 0px;
+            background:#868484;
+            color:white;
+            font-weight:bolder;
+            font-size:1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="userInput">
+            <form action="/home" method="post">
+                <input type="text" name="input" placeholder="enter your response here">
+                <button>Submit</button>
+            </form>
+        </div>
+        <div class="replies">
+            {% for msg in messages %}
+            <p>{{msg}}</p>
+            {% endfor %}
+        </div>
+        {{latest_msg}}
+    </div>
+</body>
+</html>
